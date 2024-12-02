@@ -4,7 +4,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [bh176331].[BUYER](
     [Buyer_ID] DECIMAL(5, 0) NOT NULL,
-    [Name] [varchar](40) NOT NULL,
+    [Name] [varchar](40) NOT NULL
 )
 SET ANSI_PADDING ON
 GO 

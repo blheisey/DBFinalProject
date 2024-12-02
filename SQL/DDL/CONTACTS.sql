@@ -30,15 +30,14 @@ GO
 
 SET ANSI_PADDING ON
 GO
-ALTER TABLE [CONTACTS] WITH CHECK ADD CONSTRAINT [CK_CONTACTS_EMAIL_FORMAT] CHECK (Email LIKE '%@%.%' AND 
-       Email NOT LIKE '% %' AND 
+ALTER TABLE [CONTACTS] WITH CHECK ADD CONSTRAINT [CK_CONTACTS_EMAIL_FORMAT] CHECK ( 
+      Email NOT LIKE '% %' AND 
        Email NOT LIKE '%.%@%' AND 
        Email NOT LIKE '%..%' AND 
        Email NOT LIKE '%@%-%.' AND 
-       Email NOT LIKE '%.%' AND 
+       Email NOT LIKE '%.' AND 
        Email NOT LIKE '@%' AND 
-       Email NOT LIKE '%@%' AND
-       Email NOT LIKE '%[^A-Za-z0-9@._+-]%')
+       Email NOT LIKE '%@')
 
 GO
 ALTER TABLE [CONTACTS] CHECK CONSTRAINT [CK_CONTACTS_EMAIL_FORMAT]
