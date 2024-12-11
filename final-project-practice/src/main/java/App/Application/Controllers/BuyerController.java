@@ -1,15 +1,17 @@
 package App.Application.Controllers;
 
-//import App.Domain.Buyer;
+import App.Domain.Buyer;
 import App.Infrastructure.BuyerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController()
 @RequestMapping("/Buyer")
-public class AttractionController {
+public class BuyerController {
 
     @Autowired
     private JdbcTemplate databaseConnection;
@@ -34,16 +36,16 @@ public class AttractionController {
         this.buyerRepository.create(buyer); //create a new buyer in the database
     }
 
-    @PutMapping("/{name}")
+    @PutMapping("/{buyerID}")
     @ResponseStatus(HttpStatus.OK)
-    public void put(@PathVariable("name") String name, @RequestBody() Buyer buyer){
+    public void put(@PathVariable("buyerID") int buyerID, @RequestBody() Buyer buyer){
         this.buyerRepository.setDatabaseConnection(this.databaseConnection);
-        this.buyerRepository.update(name, buyer); //update a buyer in the database
+        this.buyerRepository.update(buyerID, buyer); //update a buyer in the database
     }
 
     @DeleteMapping("/{buyerID}")
     @ResponseStatus(HttpStatus.OK)
-    public void delete(@PathVariable("buyerID") String buyerID){
+    public void delete(@PathVariable("buyerID") int buyerID){
         this.buyerRepository.setDatabaseConnection(this.databaseConnection);
         this.buyerRepository.delete(buyerID); //delete a buyer in the database
     }
