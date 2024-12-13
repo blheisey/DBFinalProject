@@ -33,12 +33,12 @@ public class HouseController {
         return this.houseRepository.get(); //return a list of buyers in the database
     }
 
-    // @GetMapping("/ByPreferenceID/{preferenceID}")
-    // @ResponseStatus(HttpStatus.OK)
-    // public List<House> getByPreferenceID(@PathVariable("preferenceID") int preferenceID){
-    //     this.houseRepository.setDatabaseConnection(this.databaseConnection);
-    //     return this.houseRepository.get(preferenceID); //return a list of houses in the database by preferenceID
-    // }
+    @GetMapping("/ByPreferenceID/{preferenceID}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<House> getByPreferenceID(@PathVariable("preferenceID") int preferenceID){
+        this.houseRepository.setDatabaseConnection(this.databaseConnection);
+        return this.houseRepository.get(preferenceID); //return a list of houses in the database by preferenceID
+    }
     
      @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
