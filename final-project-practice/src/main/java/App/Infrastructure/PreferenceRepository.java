@@ -51,16 +51,18 @@ public class PreferenceRepository implements IPreferenceRepository{
         this.databaseConnection.execute(sql);
         return true;
     }
+
+    
     @Override
     public List<Preference> get(int id) {
-        String sql = "SELECT * FROM PREFERENCE WHERE preferenceID = '" + id + "';";
+        String sql = "SELECT * FROM PREFERENCE WHERE BuyerId = '" + id + "';";
         List<Preference> preferences = this.databaseConnection.query(sql, BeanPropertyRowMapper.newInstance(Preference.class));
         return preferences;
     }
 
     @Override
     public List<Preference> get() {
-        String sql = "SELECT * FROM PREFERENCE;";
+        String sql = "SELECT Preference_ID as PreferenceId, Buyer_ID as BuyerId, type, Yes_or_no as yesOrNo, value, min, max FROM PREFERENCE;";
         List<Preference> preferences = this.databaseConnection.query(sql, BeanPropertyRowMapper.newInstance(Preference.class));
         return preferences;
     }

@@ -3,14 +3,14 @@ package App.Domain;
 
 
 public class Buyer {
-    private int buyerID;
+    private int BuyerId;
     private String name;
 
     //getters and setters
 
     //getters
     public int getBuyerID() {
-        return buyerID;
+        return BuyerId;
     }
 
     public String getName() {
@@ -20,7 +20,7 @@ public class Buyer {
     //setters
 
     public void setBuyerID(int buyerID) {
-        this.buyerID = buyerID;
+        this.BuyerId = buyerID;
     }
 
     public void setName(String name) {

@@ -37,7 +37,7 @@ public class BuyerRepository implements IBuyerRepository{
 
     @Override
     public List<Buyer> get() {
-        String sql = "SELECT * FROM bh176331.BUYER;";
+        String sql = "SELECT Buyer_ID as BuyerId, name FROM BUYER;";
         List<Buyer> buyers = this.databaseConnection.query(sql, BeanPropertyRowMapper.newInstance(Buyer.class));
         return buyers;  
     }

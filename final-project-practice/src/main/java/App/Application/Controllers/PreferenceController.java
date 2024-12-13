@@ -31,6 +31,9 @@ public class PreferenceController {
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
     public void post(@RequestBody() Preference preference){
+        if (preference.getMin() > preference.getMax()) { //semantic constraint 
+            throw new IllegalArgumentException("Min cannot be greater than max");
+        }
         this.preferenceRepository.setDatabaseConnection(this.databaseConnection);
         this.preferenceRepository.create(preference); //create a new buyer in the database
     }

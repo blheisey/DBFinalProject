@@ -60,7 +60,7 @@ public class AgentRepository implements IAgentRepository{
 
     @Override
     public List<Agent> get() {
-        String sql = "SELECT * FROM AGENT;";
+        String sql = "SELECT Agent_ID as AgentId, name, email, phone_number, employment_agency FROM AGENT;";
         List<Agent> agents = this.databaseConnection.query(sql, BeanPropertyRowMapper.newInstance(Agent.class));
         return agents;
     }

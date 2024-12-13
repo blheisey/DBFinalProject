@@ -1,24 +1,24 @@
 package App.Domain;
 
 public class Preference {
-    private int preferenceID;
-    private int buyerID;
+    private int PreferenceId;
+    private int BuyerId;
     private String type;
     private String yesOrNo;
-    private float value;
-    private float min;
-    private float max;
+    private Float value;
+    private Float min;
+    private Float max;
 
     //getters and setters
 
     //getters
 
     public int getPreferenceID() {
-        return preferenceID;
+        return PreferenceId;
     }
 
     public int getBuyerID() {
-        return buyerID;
+        return BuyerId;
     }
 
     public String getType() {
@@ -29,26 +29,26 @@ public class Preference {
         return yesOrNo;
     }
 
-    public float getValue() {
+    public Float getValue() {
         return value;
     }
 
-    public float getMin() {
+    public Float getMin() {
         return min;
     }
 
-    public float getMax() {
+    public Float getMax() {
         return max;
     }
 
     //setters
 
     public void setPreferenceID(int preferenceID) {
-        this.preferenceID = preferenceID;
+        this.PreferenceId = preferenceID;
     }
 
     public void setBuyerID(int buyerID) {
-        this.buyerID = buyerID;
+        this.BuyerId = buyerID;
     }
 
     public void setType(String type) {
@@ -59,15 +59,15 @@ public class Preference {
         this.yesOrNo = yesOrNo;
     }
 
-    public void setValue(float value) {
+    public void setValue(Float value) {
         this.value = value;
     }
 
-    public void setMin(float min) {
+    public void setMin(Float min) {
         this.min = min;
     }
 
-    public void setMax(float max) {
+    public void setMax(Float max) {
         this.max = max;
     }
 }

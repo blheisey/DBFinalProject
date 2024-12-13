@@ -182,16 +182,16 @@ GO
 
 INSERT INTO [bh176331].[PREFERENCE] (Preference_ID, Buyer_ID, Type, Yes_or_no, Value, Min, Max)
 VALUES
-(1, 1, 'YesNo', 'Yes', NULL, NULL, NULL),
-(2, 2, 'MinMax', NULL, NULL, 3.0, 5.0),
-(3, 3, 'Value', NULL, 3.5, NULL, NULL),
-(4, 4, 'MinMax', NULL, NULL, 2.0, 8.0),
-(5, 5, 'YesNo', 'No', NULL, NULL, NULL),
-(6, 6, 'Value', NULL, 1.0, NULL, NULL),
-(7, 7, 'MinMax', NULL, NULL, 4.0, 5.0),
-(8, 8, 'Value', NULL, 2.5, NULL, NULL),
-(9, 9, 'YesNo', 'Yes', NULL, NULL, NULL),
-(10, 10, 'MinMax', NULL, NULL, 1.0, 7.0);
+(1, 1, 'basement', 'Yes', NULL, NULL, NULL),
+(2, 2, 'bedroomsMinMax', NULL, NULL, 3.0, 5.0),
+(3, 3, 'bathroomsValue', NULL, 3.5, NULL, NULL),
+(4, 4, 'bedroomsMinMax', NULL, NULL, 2.0, 8.0),
+(5, 5, 'basement', 'No', NULL, NULL, NULL),
+(6, 6, 'bedroomsValue', NULL, 1.0, NULL, NULL),
+(7, 7, 'bedroomsMinMax', NULL, NULL, 4.0, 5.0),
+(8, 8, 'bathroomsValue', NULL, 2.5, NULL, NULL),
+(9, 9, 'basement', 'Yes', NULL, NULL, NULL),
+(10, 10, 'bedroomsMinMax', NULL, NULL, 1.0, 7.0);
 GO 
 
 INSERT INTO [bh176331].[CONTACTS] (Buyer_ID, Agent_ID, Agent_name, Phone_number, Email, Message)

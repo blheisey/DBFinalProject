@@ -1,21 +1,21 @@
 package App.Domain;
 
 public class House {
-    private int houseID;
+    private int HouseId;
     private int basement;
     private int garage;
     private int bedrooms;
     private float bathrooms;
     private int stories;
-    private int yearBuilt;
-    private float squareFootage;
+    private int year_built;
+    private float square_footage;
 
     //getters and setters
 
     //getters
 
     public int getHouseID() {
-        return houseID;
+        return HouseId;
     }
 
     public int getBasement() {
@@ -39,17 +39,17 @@ public class House {
     }
 
     public int getYearBuilt() {
-        return yearBuilt;
+        return year_built;
     }
 
     public float getSquareFootage() {
-        return squareFootage;
+        return square_footage;
     }
 
     //setters
 
     public void setHouseID(int houseID) {
-        this.houseID = houseID;
+        this.HouseId = houseID;
     }
 
     public void setBasement(int basement) {
@@ -73,10 +73,10 @@ public class House {
     }
 
     public void setYearBuilt(int yearBuilt) {
-        this.yearBuilt = yearBuilt;
+        this.year_built = yearBuilt;
     }
 
     public void setSquareFootage(float squareFootage) {
-        this.squareFootage = squareFootage;
+        this.square_footage = squareFootage;
     }
 }

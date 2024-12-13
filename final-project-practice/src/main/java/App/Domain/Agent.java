@@ -1,7 +1,7 @@
 package App.Domain;
 
 public class Agent { 
-    private int agentID;
+    private int AgentId;
     private String name;
     private String email;
     private String phoneNumber;
@@ -12,7 +12,7 @@ public class Agent {
     //getters
 
     public int getAgentID() {
-        return agentID;
+        return AgentId;
     }
 
     public String getName() {
@@ -34,7 +34,7 @@ public class Agent {
     //setters
 
     public void setAgentID(int agentID) {
-        this.agentID = agentID;
+        this.AgentId = agentID;
     }
 
     public void setName(String name) {

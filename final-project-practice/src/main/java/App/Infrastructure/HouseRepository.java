@@ -1,5 +1,4 @@
 package App.Infrastructure;
-
 import App.Domain.House;
 import App.Domain.IHouseRepository;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -58,15 +57,17 @@ public class HouseRepository implements IHouseRepository{
     }
 
     @Override
-    public List<House> get(int id) {
-        String sql = "SELECT * FROM House WHERE HouseID = '" + id + "';";
-        List<House> houses = this.databaseConnection.query(sql, BeanPropertyRowMapper.newInstance(House.class));
+    public List<House> get(int PreferencdId) {
+        String houseSql = "SELECT h.House_ID as HouseId, h.basement, h.garage, h.bedrooms, h.bathrooms, h.stories, h.year_built, h.square_footage "
+            + "FROM HOUSE h" + "JOIN PREFERENCE p ON p.Preference_ID = PreferenceId AND p.Min <= h.Bedrooms AND p.Max >= h.Bedrooms ";
+        List<House> houses = this.databaseConnection.query(houseSql, BeanPropertyRowMapper.newInstance(House.class));
         return houses;
+
     }
 
     @Override
     public List<House> get() {
-        String sql = "SELECT * FROM House;";
+        String sql = "SELECT House_ID as HouseId, basement, garage, bedrooms, bathrooms, stories, year_built, square_footage FROM House ORDER BY year_built ASC;"; //ordering
         List<House> houses = this.databaseConnection.query(sql, BeanPropertyRowMapper.newInstance(House.class));
         return houses;
     }

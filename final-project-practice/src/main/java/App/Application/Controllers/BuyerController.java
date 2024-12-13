@@ -17,7 +17,7 @@ public class BuyerController {
     private JdbcTemplate databaseConnection;
 
     private BuyerRepository buyerRepository;
-
+    
     public BuyerController(){
         this.buyerRepository = new BuyerRepository();
     }
@@ -43,12 +43,13 @@ public class BuyerController {
         this.buyerRepository.update(buyerID, buyer); //update a buyer in the database
     }
 
-    @DeleteMapping("/{buyerID}")
+    @DeleteMapping("/{buyerID}") //on delete cascade is defined in the sql for ByerId in PREFERENCE
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable("buyerID") int buyerID){
         this.buyerRepository.setDatabaseConnection(this.databaseConnection);
         this.buyerRepository.delete(buyerID); //delete a buyer in the database
     }
+
 }
 
 
